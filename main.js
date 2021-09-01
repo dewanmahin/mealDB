@@ -13,10 +13,11 @@ const searchFood = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => displaySearchResult(data.meals))
+        
         .catch(error => displayError(error))
     }
 }
-
+// Error
 const displayError = error => {
     const errorMsg = document.getElementById("error-Msg");
     errorMsg.innerText = "Something went wrong please try again leter"
