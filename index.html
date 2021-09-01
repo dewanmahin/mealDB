@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealDB</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="text-center text-success">Search your favorite food</h2>
+
+<!-- Meal Search Area -->
+<div class="input-group my-4 w-50 mx-auto">
+    <input id="search-field" type="text" class="form-control" placeholder="Search the food you want" aria-label="Recipient's username" aria-describedby="button-addon2">
+
+    <button onclick="searchFood()" id="button-search" class="btn bg-success text-white btn-outline-secondary" type="button">Button</button>
+</div>
+
+<!-- Meal Search Result -->
+<div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- <div class="col">
+        <div class="card h-100">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<!-- Local JS -->
+<script src="main.js"></script>
+</body>
+</html>
