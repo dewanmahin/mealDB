@@ -27,9 +27,10 @@ const displaySearchResult = meals => {
     // Clear previous result
     searchResult.innerHTML = "";
 
-    // if(meals.length == -1){
+    // if(Object.keys(meals).length == 0){
     //     const errorMsg = document.getElementById("error-Msg");
     //     errorMsg.innerText = "Sorry!!! We did not find the searched food."
+    //     return;
     // }
 
     meals.forEach(meal => {
