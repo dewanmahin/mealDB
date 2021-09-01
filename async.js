@@ -1,4 +1,4 @@
-const searchFood = () => {
+const searchFood = async () => {
     const searchField = document.getElementById("search-field");
     const searchText = searchField.value;
     // Empty input value after search
@@ -10,16 +10,20 @@ const searchFood = () => {
     }else{
         // Load Data
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => displaySearchResult(data.meals))
-        .catch(error => displayError(error))
-    }
-}
+        try{
+            const res = await fetch(url)
+            const data = await res.json();
+            displaySearchResult(data.meals)
+        }
+        catch(error){
+            const errorMsg = document.getElementById("error-Msg");
+            errorMsg.innerText = "Something went wrong please try again leter"
+        }
 
-const displayError = error => {
-    const errorMsg = document.getElementById("error-Msg");
-    errorMsg.innerText = "Something went wrong please try again leter"
+        // fetch(url)
+        // .then(res => res.json())
+        // .then(data => displaySearchResult(data.meals))
+    }
 }
 
 const displaySearchResult = meals => {
@@ -49,12 +53,15 @@ const displaySearchResult = meals => {
     });
 }
 
-const loadMealDetail = mealId => {
-    console.log(mealId);
+const loadMealDetail = async mealId => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayMealDetail(data.meals[0]))
+    const res = await fetch(url);
+    const data = await res.json();
+    displayMealDetail(data.meals[0])
+
+    // fetch(url)
+    // .then(res => res.json())
+    // .then(data => displayMealDetail(data.meals[0]))
 }
 
 const displayMealDetail = meal => {
